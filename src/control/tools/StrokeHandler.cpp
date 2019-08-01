@@ -84,13 +84,13 @@ bool StrokeHandler::onMotionNotifyEvent(const PositionInputData& pos)
 
 	Point currentPoint(x, y);
 
-	if (pointCount > 0)
-	{
-		if (!validMotion(currentPoint, stroke->getPoint(pointCount - 1)))
-		{
-			return true;
-		}
-	}
+	// if (pointCount > 0)
+	// {
+	// 	if (!validMotion(currentPoint, stroke->getPoint(pointCount - 1)))
+	// 	{
+	// 		return true;
+	// 	}
+	// }
 
 	if (Point::NO_PRESSURE != pos.pressure && stroke->getToolType() == STROKE_TOOL_PEN)
 	{

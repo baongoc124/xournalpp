@@ -3539,3 +3539,9 @@ LayerController* Control::getLayerController()
 
 	return this->layerController;
 }
+
+
+void Control::setToolColor(int color)
+{
+  this->toolHandler->setColor(color, true);
+}

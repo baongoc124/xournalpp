@@ -209,6 +209,7 @@ public:
 	void clearSelectionEndText();
 
 	void setToolSize(ToolSize size);
+	void setToolColor(int color);
 
 	void setLineStyle(const string& style);
 

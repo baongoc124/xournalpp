@@ -193,6 +193,20 @@ static int applib_uiActionSelected(lua_State* L)
 }
 
 /**
+ * Set current tool's color
+ */
+static int applib_setToolColor(lua_State* L)
+{
+	int color = lua_tointeger(L, 1);
+	Plugin* plugin = Plugin::getPluginFromLua(L);
+
+	Control* ctrl = plugin->getControl();
+	ctrl->setToolColor(color);
+
+	return 1;
+}
+
+/**
  * Select UI action
  */
 static int applib_changeCurrentPageBackground(lua_State* L)
@@ -216,6 +230,7 @@ static const luaL_Reg applib[] = {
 	{ "uiAction", applib_uiAction },
 	{ "uiActionSelected", applib_uiActionSelected },
 	{ "changeCurrentPageBackground", applib_changeCurrentPageBackground },
+	{ "setToolColor", applib_setToolColor },
 
 	// Placeholder
 //	{"MSG_BT_OK", NULL},
